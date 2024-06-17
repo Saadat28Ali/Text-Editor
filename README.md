@@ -3,7 +3,12 @@
 # **Text Editor**
 A basic text editor, designed to edit .txt files but can be used to edit any text file.
 
-## **Technologies used:**
+## **Key Features**
+- Provides a dark and a light theme
+- Allows browsing of directories from the app itself
+- Single-click enabling for monospace font
+
+## **Technologies used**
 - NodeJS
 - ElectronJS
 - LESS CSS
