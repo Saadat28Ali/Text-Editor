@@ -23,3 +23,7 @@ A basic text editor, designed to edit .txt files but can be used to edit any tex
 
 - Run
 - > npm run build
+
+## **Running**
+- From source code, Run
+- > npm run run
