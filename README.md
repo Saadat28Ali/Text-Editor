@@ -13,3 +13,8 @@ A basic text editor, designed to edit .txt files but can be used to edit any tex
 - NodeJS
 - ElectronJS
 - LESS CSS
+
+## **Building**
+- Requires
+-- Node, Electron, Less
+- Run > npm run build
