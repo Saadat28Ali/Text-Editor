@@ -1,0 +1,266 @@
+@import "theme.less";
+@import "colors_fonts.less";
+
+@width: 480px;
+@height: 360px;
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: @current_sub_color;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    color: if((@theme = "Dark"), white, if((@theme = "Light"), @light_text_color, white));
+}
+
+#main_area {
+    padding: 20px;
+    background-color: @current_main_color;
+    height: 82vh;
+    width: 95vw;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#left_pane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    // flex-grow: 1.5;
+}
+
+.transparent_textboxes {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    width: 100%;
+    border: 0px;
+    font-family: @main_font_family;
+    text-wrap: auto;
+    outline: none;
+}
+
+#title {
+    .transparent_textboxes();
+    font-size: @height * 0.1;
+    font-weight: 700;
+    text-wrap:wrap;
+    height: @height * 0.12;
+    resize: none;
+    overflow: hidden;
+    // max-width: 2;
+    color: @current_text_color;
+    // background-color: red;
+    // width: 100%;
+    align-self: flex-start;
+
+    &:hover:not(:focus) {
+        animation-name: title_hover;
+        animation-duration: 0.2s;
+
+        // font-size: @height * 0.105;
+        scale: 101%;
+        // padding-left: 10px;
+    }
+
+    &:focus {
+        // font-size: @height * 0.105;
+        scale: 101%;
+        // padding-left: 10px;
+    }
+}
+
+#body {
+    .transparent_textboxes();
+    // font-family: "Liberation Sans";
+    font-size: @height * 0.05;
+    font-weight: 400;
+    resize: none;
+    flex-grow: 2;
+    padding: 10px;
+    line-height: 125%;
+    width: 95%;
+    align-self: flex-start;
+    // background-color: red;
+    overflow: auto;
+    color: @current_text_color;
+}
+
+#options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option_button_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    padding: 5px 8px 10px 8px;      // top right bottom left
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: 900;
+    user-select: none;
+    scale: 1;
+
+    animation-name: button_release;
+    animation-duration: 0.2s;
+    
+    &:hover {
+        background-color: @current_sub_color;
+    }
+
+    &:active {
+        background-color: @current_sub_color_inverted;
+        color: @current_text_color_inverted;
+        scale: 0.9;
+
+        animation-name: button_press;
+        animation-duration: 0.2s;
+    }
+}
+
+.option_button_image {
+    .option_button_text();
+    &>img {
+        filter: if(@theme = "Dark", invert(100%), invert(0%));
+    }
+    &:active {
+        &>img {
+            filter: if(@theme = "Light", invert(100%), invert(0%));
+        }
+    }
+}
+
+#save_button {
+    padding: 7px 8px 7px 8px;
+}
+
+#monospace_button {
+    padding: 7px 8px 7px 8px;
+}
+
+@keyframes button_press {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: 0.9;
+    }
+}
+
+@keyframes button_release {
+    from {
+        scale: 0.9;
+    }
+    to {
+        scale: 1;
+    }
+}
+
+@keyframes title_hover {
+    from {
+        // scale: 1;
+        // font-size: @height * 0.1;
+        scale: 100%;
+        // margin-left: 0.4%;
+        // width: 99.6%;
+        // padding-left: 0px;
+        // width: 100%;
+    }
+    to {
+        // font-size: @height * 0.105
+        scale: 101%;
+        // padding-left: 10px;
+        // width: 100% - 10px;
+    }
+}
+
+#right_pane {
+    // flex-grow: 1;
+    background-color: @current_sub_color;
+    font-family: @main_font_family;
+    color: @current_text_color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+    align-self: flex-end;
+    width: 25%;
+    height: 100%;
+
+    padding: 0px 10px 5px 10px;
+    border-radius: 5px;
+}
+
+#directory_display {
+    display: flex;
+    flex-direction: row;
+    width: 94%;
+    // align-self: flex-start;
+}
+
+#directory_display > .option_button_image {
+    padding: 2px 2px 2px 2px;
+    &:hover {
+        background-color: @current_main_color;
+    }
+    &:active {
+        &>img {
+            filter: if(@theme = "Dark", invert(100%), invert(0%));
+        }
+    }
+    
+}
+
+#location {
+    flex-grow: 2;
+
+    display: flex;
+    align-items: center;
+    padding: 7px 5px 5px 5px;
+    // width: 94%;
+    font-weight: 700;
+}
+
+#file_list {
+    display: flex;
+    flex-direction: column;
+    width: 94%;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+    // align-self: flex-start;
+    scrollbar-color: @current_text_color @current_sub_color;
+}
+
+.file_name {
+    padding: 5px 5px 5px 5px;
+
+    &:hover {
+        background-color: @current_main_color;
+    }
+
+    &.selected {
+        background-color: @current_main_color;
+    }
+
+    text-wrap: pretty;
+    // text-overflow: ellipsis;
+    // align-self: flex-start;
+    border-radius: 2px;
+    margin: 2px;
+}

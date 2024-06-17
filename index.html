@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style_dark.css" />
+    </head>
+    <body>
+        <div id="main_area"> 
+            <div id="left_pane" class="pane">
+                <textarea id="title" placeholder="Title"></textarea>
+                <textarea id="body" placeholder="Content here"></textarea>
+                <div id="options">
+                    <div class="option_button_text" onclick="switchThemeCallback()"> &#9788 </div>
+                    <!-- <div class="option_button_image" onclick="addNumberedList(null)" id="numbered_list"> <img src="./Icons/numbered_list.png" width="20px" class="invert"> </div> -->
+                    <div class="option_button_image" onclick="saveFileCallback()" id="save_button">
+                        <img src="./Icons/save.png" width="20px" class="invert">
+                    </div>
+                    <div class="option_button_image" onclick="monospaceCallback()" id="monospace_button">
+                        <img src="./Icons/monospace.png" width="20px" class="invert">
+                    </div>
+                </div>
+            </div>
+            <div id="right_pane" class="pane">
+                <div id="directory_display">
+                    <div id="location">
+                        CWD
+                    </div>
+                    <div class="option_button_image" onclick="openButtonCallback(1)" id="open_button">
+                        <img src="./Icons/open.png" width="20px" class="invert"></img>
+                    </div>
+                </div>
+                <hr width="90%">
+                <div id="file_list">
+                    <!-- <div class="file_name"> File 1 </div>
+                    <div class="file_name"> File 2 </div>
+                    <div class="file_name"> File 3 </div> -->
+                </div>
+            </div>
+            
+        </div>
+        
+    </body>
+    <script src="script.js"></script>
+
+</html>

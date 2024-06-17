@@ -1,0 +1,15 @@
+@dark_main_color: #2A2A36;
+@dark_sub_color: #16161D;
+@light_main_color: #c2c2c2;
+@light_sub_color: #f4f4f4;
+@light_text_color: #1c1c1c;
+@current_main_color: if((@theme = "Dark"), @dark_main_color, if((@theme = "Light"), @light_main_color, black));
+@current_sub_color: if((@theme = "Dark"), @dark_sub_color, if((@theme = "Light"), @light_sub_color, black));
+@current_text_color: if((@theme = "Dark"), white, if((@theme = "Light"), @light_text_color, white));
+@current_sub_color_inverted: if((@theme = "Dark"), @light_sub_color, if((@theme = "Light"), @dark_sub_color, black));
+@current_text_color_inverted: if((@theme = "Dark"), @light_text_color, if((@theme = "Light"), white, white));
+@current_main_color_inverted: if((@theme = "Dark"), @light_main_color, if((@theme = "Light"), @dark_main_color, black));
+
+@main_font_family: Arial;
+@monospace_font_family: Hack;
+@sub_font_family: "Khmer OS System";

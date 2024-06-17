@@ -1,0 +1,32 @@
+{
+  "name": "texteditor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "electron .", 
+    "build": "electron-builder install-app-deps && electron-builder build --linux --windows", 
+    "compile_style": "lessc './styles/style.less' './styles/style2.css'"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "less": "^4.2.0"
+  },
+  "devDependencies": {
+    "electron": "^30.0.9",
+    "electron-builder": "^24.13.3",
+    "less": "^4.2.0"
+  }, 
+  "build": {
+    "appId": "com.saadat.texteditor", 
+    "productName": "Text Editor", 
+    "win": {
+      "icon": "./Icons/512x512.png"
+    }, 
+    "linux": {
+      "icon": "./Icons/512x512.png"
+    }
+  }
+}

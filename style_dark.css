@@ -1,0 +1,230 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background-color: #16161D;
+  overflow: hidden;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+#main_area {
+  padding: 20px;
+  background-color: #2A2A36;
+  height: 82vh;
+  width: 95vw;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+#left_pane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+}
+.transparent_textboxes {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  width: 100%;
+  border: 0px;
+  font-family: Arial;
+  text-wrap: auto;
+  outline: none;
+}
+#title {
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  border: 0px;
+  font-family: Arial;
+  text-wrap: auto;
+  outline: none;
+  font-size: 36px;
+  font-weight: 700;
+  text-wrap: wrap;
+  height: 43.2px;
+  resize: none;
+  overflow: hidden;
+  color: white;
+  align-self: flex-start;
+}
+#title:hover:not(:focus) {
+  animation-name: title_hover;
+  animation-duration: 0.2s;
+  scale: 101%;
+}
+#title:focus {
+  scale: 101%;
+}
+#body {
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  border: 0px;
+  font-family: Arial;
+  text-wrap: auto;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  resize: none;
+  flex-grow: 2;
+  padding: 10px;
+  line-height: 125%;
+  width: 95%;
+  align-self: flex-start;
+  overflow: auto;
+  color: white;
+}
+#options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.option_button_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  padding: 5px 8px 10px 8px;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 900;
+  user-select: none;
+  scale: 1;
+  animation-name: button_release;
+  animation-duration: 0.2s;
+}
+.option_button_text:hover {
+  background-color: #16161D;
+}
+.option_button_text:active {
+  background-color: #f4f4f4;
+  color: #1c1c1c;
+  scale: 0.9;
+  animation-name: button_press;
+  animation-duration: 0.2s;
+}
+.option_button_image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  padding: 5px 8px 10px 8px;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 900;
+  user-select: none;
+  scale: 1;
+  animation-name: button_release;
+  animation-duration: 0.2s;
+}
+.option_button_image:hover {
+  background-color: #16161D;
+}
+.option_button_image:active {
+  background-color: #f4f4f4;
+  color: #1c1c1c;
+  scale: 0.9;
+  animation-name: button_press;
+  animation-duration: 0.2s;
+}
+.option_button_image > img {
+  filter: invert(100%);
+}
+.option_button_image:active > img {
+  filter: invert(0%);
+}
+#save_button {
+  padding: 7px 8px 7px 8px;
+}
+#monospace_button {
+  padding: 7px 8px 7px 8px;
+}
+@keyframes button_press {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 0.9;
+  }
+}
+@keyframes button_release {
+  from {
+    scale: 0.9;
+  }
+  to {
+    scale: 1;
+  }
+}
+@keyframes title_hover {
+  from {
+    scale: 100%;
+  }
+  to {
+    scale: 101%;
+  }
+}
+#right_pane {
+  background-color: #16161D;
+  font-family: Arial;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+  align-self: flex-end;
+  width: 25%;
+  height: 100%;
+  padding: 0px 10px 5px 10px;
+  border-radius: 5px;
+}
+#directory_display {
+  display: flex;
+  flex-direction: row;
+  width: 94%;
+}
+#directory_display > .option_button_image {
+  padding: 2px 2px 2px 2px;
+}
+#directory_display > .option_button_image:hover {
+  background-color: #2A2A36;
+}
+#directory_display > .option_button_image:active > img {
+  filter: invert(100%);
+}
+#location {
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  padding: 7px 5px 5px 5px;
+  font-weight: 700;
+}
+#file_list {
+  display: flex;
+  flex-direction: column;
+  width: 94%;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  scrollbar-color: white #16161D;
+}
+.file_name {
+  padding: 5px 5px 5px 5px;
+  text-wrap: pretty;
+  border-radius: 2px;
+  margin: 2px;
+}
+.file_name:hover {
+  background-color: #2A2A36;
+}
+.file_name.selected {
+  background-color: #2A2A36;
+}
