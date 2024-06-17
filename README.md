@@ -16,6 +16,6 @@ A basic text editor, designed to edit .txt files but can be used to edit any tex
 
 ## **Building**
 - Requires
--- Node, Electron, Less
+  - Node, Electron, Less
 - Run
 - > npm run build
