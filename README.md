@@ -16,10 +16,10 @@ A basic text editor, designed to edit .txt files but can be used to edit any tex
 
 ## **Building**
 - Requires
-  - Node [](https://nodejs.org/en)
-  - Electron [](https://www.electronjs.org/)
-  - Less [](https://lesscss.org/)
-  - electron-builder [](https://www.electron.build/)
+  - Node [Link](https://nodejs.org/en)
+  - Electron [Link](https://www.electronjs.org/)
+  - Less [Link](https://lesscss.org/)
+  - electron-builder [Link](https://www.electron.build/)
 
 - Run
 - > npm run build
